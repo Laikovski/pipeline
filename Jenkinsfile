@@ -40,7 +40,7 @@ pipeline {
 
     stage('exec_script') {
       steps {
-        sh '/tmp/test.sh'
+        sh 'echo $PWD'
       }
     }
 
