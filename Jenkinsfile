@@ -40,7 +40,12 @@ pipeline {
 
     stage('exec_script') {
       steps {
-        sh 'echo $PWD'
+        sh '''./jenkins/build.sh
+
+
+
+
+'''
       }
     }
 
