@@ -13,5 +13,19 @@ pipeline {
       }
     }
 
+    stage('tests') {
+      steps {
+        sh 'sleep 10'
+        echo 'messgae after 10 s'
+      }
+    }
+
+    stage('deploy') {
+      steps {
+        sleep 10
+        echo 'Finish all'
+      }
+    }
+
   }
 }
