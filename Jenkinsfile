@@ -14,9 +14,20 @@ pipeline {
     }
 
     stage('tests') {
-      steps {
-        sh 'sleep 10'
-        echo 'messgae after 10 s'
+      parallel {
+        stage('tests') {
+          steps {
+            sh 'sleep 10'
+            echo 'messgae after 10 s'
+          }
+        }
+
+        stage('unit tests') {
+          steps {
+            echo 'simple unit tests'
+          }
+        }
+
       }
     }
 
