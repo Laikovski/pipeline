@@ -40,12 +40,8 @@ pipeline {
 
     stage('exec_script') {
       steps {
-        sh '''./jenkins/build.sh
-
-
-
-
-'''
+        input(message: 'insert message', ok: 'waiting !')
+        sh 'echo $PWD'
         archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
       }
     }
