@@ -40,7 +40,7 @@ pipeline {
 
     stage('exec_script') {
       steps {
-        input(message: 'insert message', ok: 'waiting !')
+        input(message: 'Continie to Deploy', ok: 'Yes')
         sh 'echo $PWD'
         archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
       }
